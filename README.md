@@ -1,4 +1,4 @@
-# Tautulli-AniList-Sync
+# Plex-AniList-Sync
 
 A modern and robust Python script to automatically update your AniList watch progress when you watch an anime episode in Plex, triggered by Tautulli.
 
