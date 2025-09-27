@@ -21,7 +21,7 @@ Follow these steps to get the script up and running.
 - You must have **Python 3** installed.
 - You must have the **`requests`** library. If not, install it by running:
 
-    pip install requests
+    ```pip install requests```
 
 ### 2. Get AniList API Token
 
