@@ -2,25 +2,24 @@
 
 A modern and robust Python script to automatically update your AniList watch progress when you watch an anime episode in Plex, triggered by Tautulli.
 
-This script is designed to be a simple, single-file solution that correctly handles seasonal anime (e.g., "Jujutsu Kaisen Season 2") without manual intervention.
+This project is designed to be a simple, user-friendly solution. **You only need to edit the `config.ini` file to get started.**
 
 ## Project Files
 
 -   **`anilist_sync.py`**: The main script that Tautulli will run.
--   **`config.ini`**: The configuration file where you will safely store your AniList API token.
--   **`obtener_token.py`**: A one-time-use helper script to generate your personal AniList API token.
+-   **`config.ini`**: The central configuration file. **This is the only file you need to edit.**
+-   **`get_token.py`**: A helper script that you run once to automatically generate your API token.
 
 ## How It Works
 
 1.  You finish watching an anime episode in Plex.
 2.  Tautulli detects the "watched" event and triggers its script agent.
-3.  Tautulli runs `anilist_sync.py`, passing the show's title, season, and episode number as arguments.
-4.  The script reads your API token from `config.ini`, then searches AniList for the correct anime and season.
-5.  If the watched episode is newer than the progress on AniList, it updates your list.
+3.  Tautulli runs `anilist_sync.py`, passing the show's title, season, and episode number.
+4.  The script reads your API token from `config.ini`, searches AniList for the correct anime, and updates your watch progress.
 
 ## Setup Instructions
 
-Follow these steps carefully to get everything running.
+Follow these steps carefully. The entire configuration is handled in the `config.ini` file.
 
 ### 1. Prerequisites
 
@@ -28,47 +27,35 @@ Follow these steps carefully to get everything running.
 -   Python 3 installed on the machine where Tautulli runs.
 -   The `requests` library for Python. If you don't have it, install it:
 
+    ```bash
     pip install requests
 
-### 2. AniList API Setup & Token Generation
+### 2. Generate Your AniList API Token (One-Time Setup)
 
-This is a **one-time process** to authorize the script to access your AniList account.
+This process uses the `get_token.py` script to automatically generate and save your token.
 
-**Step 2.1: Create an AniList API Client**
+**Step 2.1: Get Your Client ID and Secret**
 1.  Go to the AniList Apps settings page: **[https://anilist.co/settings/apps](https://anilist.co/settings/apps)**
 2.  Click **Create New Client**.
 3.  Fill in the details:
     -   **Name**: `Tautulli Sync` (or anything you like)
     -   **Redirect URL**: `https://anilist.co/api/v2/oauth/pin`
-4.  Click **Save**. You will now see your new client in a list. Click on it to see its details.
-5.  Keep this page open. You will need the **Client ID** and **Client Secret** for the next step.
+4.  Click **Save**. You will now see your new client. Click on it to see its **Client ID** and **Client Secret**.
+5.  Open the `config.ini` file from this repository.
+6.  Copy your **Client ID** and **Client Secret** and paste them into the corresponding fields in `config.ini`. Save the file.
 
-**Step 2.2: Generate the Final Access Token**
-1.  Download the `obtener_token.py` script from this repository.
-2.  Open `obtener_token.py` in a text editor.
-3.  Paste your **Client ID** and **Client Secret** into the corresponding variables at the top of the file.
-4.  Now, on the AniList page from the previous step, get your authorization code (PIN) by visiting the authorization URL: `https://anilist.co/api/v2/oauth/authorize?client_id=YOUR_CLIENT_ID&response_type=code` (replace `YOUR_CLIENT_ID` with your actual Client ID).
-5.  Authorize the app. You will be redirected to a page displaying a long authorization code (PIN). **Copy this entire code.**
-6.  Paste the PIN you just copied into the `AUTHORIZATION_CODE` variable in `obtener_token.py`.
-7.  Save the `obtener_token.py` file and run it from your terminal:
+**Step 2.2: Run the Token Generation Script**
+1.  Now, run the `get_token.py` script from your terminal:
 
     ```bash
-    python obtener_token.py
+    python get_token.py
 
-8.  If successful, the script will print a very long **Access Token**. **Copy this token!** This is the final key you need.
+2.  The script will guide you. It will ask you to open a URL in your browser to authorize the app.
+3.  After authorizing, AniList will give you a long code (PIN).
+4.  **Copy the PIN** and **paste it back into the terminal** when the script asks for it.
+5.  If successful, the script will automatically write the final `ApiToken` into your `config.ini` file.
 
-### 3. Script Configuration
-
-1.  Open the `config.ini` file.
-2.  You will see this content:
-
-    [AniList]
-    ApiToken = YOUR_ANILIST_TOKEN_GOES_HERE
-
-3.  Replace `YOUR_ANILIST_TOKEN_GOES_HERE` with the final **Access Token** you just generated.
-4.  Save the `config.ini` file. **Keep this file private and never share it.**
-
-### 4. Tautulli Configuration
+### 3. Tautulli Configuration
 
 1.  In Tautulli, go to **Settings > Notification Agents > Add a new notification agent**.
 2.  Select **Script**.
@@ -88,7 +75,7 @@ This is a **one-time process** to authorize the script to access your AniList ac
 
 ## That's it!
 
-Your setup is complete. The next time you finish watching an anime episode, your AniList profile will be updated automatically.
+Your setup is complete. The project is now fully configured and ready to go.
 
 ---
 ## License
