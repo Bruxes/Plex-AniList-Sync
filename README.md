@@ -74,6 +74,29 @@ This process uses the `get_token.py` script to automatically generate and save y
 
 6.  Save the notification agent.
 
+### 4. Verify Your Setup (Recommended)
+
+After completing the configuration, you can run the included test script to verify that everything is working correctly. This will check your `config.ini` file and attempt to connect to the AniList API with your token.
+
+From your terminal, run the following command:
+
+    python test_config.py
+
+**If the test is successful**, you will see a success message with your AniList username:
+
+    --- Running Configuration Test ---
+    ✅ Found config.ini file.
+    ✅ Found 'ApiToken' in config.ini.
+    ▶️  Attempting to connect to AniList API...
+    ✅ Successfully connected to AniList API.
+
+    -----------------------------------------
+    🎉 SUCCESS! Your configuration is correct!
+       Connected to AniList as: YourUsername
+    -----------------------------------------
+
+If you see any errors, the script will provide hints on how to fix the issue (e.g., an invalid token or a missing configuration file).
+
 ## That's it!
 
 Your setup is complete. The project is now fully configured and ready to go.
