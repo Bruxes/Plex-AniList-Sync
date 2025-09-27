@@ -9,6 +9,7 @@ This project is designed to be a simple, user-friendly solution. **You only need
 -   **`anilist_sync.py`**: The main script that Tautulli will run.
 -   **`config.ini`**: The central configuration file. **This is the only file you need to edit.**
 -   **`get_token.py`**: A helper script that you run once to automatically generate your API token.
+-   **`test_config.py`**: A test script to help you know if you did everything good or not.
 
 ## How It Works
 
