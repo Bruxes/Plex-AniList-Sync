@@ -67,9 +67,8 @@ This process uses the `get_token.py` script to automatically generate and save y
 5.  **Arguments Tab:**
     -   Go to the **Watched** section.
     -   In the text box, enter the following arguments:
-      
 
-    ```bash
+    ```
     --title "{show_name}" --episode "{episode_num}" --season "{season_num}"
 
 6.  Save the notification agent.
