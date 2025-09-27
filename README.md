@@ -55,25 +55,7 @@ This process uses the `get_token.py` script to automatically generate and save y
 4.  **Copy the PIN** and **paste it back into the terminal** when the script asks for it.
 5.  If successful, the script will automatically write the final `ApiToken` into your `config.ini` file.
 
-### 3. Tautulli Configuration
-
-1.  In Tautulli, go to **Settings > Notification Agents > Add a new notification agent**.
-2.  Select **Script**.
-3.  **Configuration Tab:**
-    -   **Script Folder**: Select the folder where you saved `anilist_sync.py`.
-    -   **Script File**: Choose `anilist_sync.py` from the dropdown.
-4.  **Triggers Tab:**
-    -   Check the box for **Watched**.
-5.  **Arguments Tab:**
-    -   Go to the **Watched** section.
-    -   In the text box, enter the following arguments:
-
-    ```bash
-    --title "{show_name}" --episode "{episode_num}" --season "{season_num}"
-
-6.  Save the notification agent.
-
-### 4. Verify Your Setup (Recommended)
+### 3. Verify Your Setup (Recommended)
 
 After completing the configuration, you can run the included test script to verify that everything is working correctly. This will check your `config.ini` file and attempt to connect to the AniList API with your token.
 
@@ -95,6 +77,24 @@ From your terminal, run the following command:
     -----------------------------------------
 
 If you see any errors, the script will provide hints on how to fix the issue (e.g., an invalid token or a missing configuration file).
+
+### 4. Tautulli Configuration
+
+1.  In Tautulli, go to **Settings > Notification Agents > Add a new notification agent**.
+2.  Select **Script**.
+3.  **Configuration Tab:**
+    -   **Script Folder**: Select the folder where you saved `anilist_sync.py`.
+    -   **Script File**: Choose `anilist_sync.py` from the dropdown.
+4.  **Triggers Tab:**
+    -   Check the box for **Watched**.
+5.  **Arguments Tab:**
+    -   Go to the **Watched** section.
+    -   In the text box, enter the following arguments:
+
+    ```bash
+    --title "{show_name}" --episode "{episode_num}" --season "{season_num}"
+
+6.  Save the notification agent.
 
 ## That's it!
 
