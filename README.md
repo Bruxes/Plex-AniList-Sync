@@ -1,6 +1,6 @@
 # Plex-AniList-Sync
 
-<img width="1024" height="1024" alt="Gemini_Generated_Image_74zd7474zd7474zd" src="https://github.com/user-attachments/assets/34ee7ac4-2e1b-46d2-b6e4-e9642993aafe" />
+<img width="256" height="256" alt="Gemini_Generated_Image_74zd7474zd7474zd" src="https://github.com/user-attachments/assets/34ee7ac4-2e1b-46d2-b6e4-e9642993aafe" />
 
 
 A modern and robust Python script to automatically update your AniList watch progress when you watch an anime episode in Plex, triggered by Tautulli.
