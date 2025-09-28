@@ -1,6 +1,6 @@
 # Plex-AniList-Sync
 
-            <img width="256" height="256" alt="Gemini_Generated_Image_74zd7474zd7474zd" src="https://github.com/user-attachments/assets/34ee7ac4-2e1b-46d2-b6e4-e9642993aafe" />
+<img width="256" height="256" alt="Gemini_Generated_Image_74zd7474zd7474zd" src="https://github.com/user-attachments/assets/34ee7ac4-2e1b-46d2-b6e4-e9642993aafe" />
 
 
 A modern and robust Python script to automatically update your AniList watch progress when you watch an anime episode in Plex, triggered by Tautulli.
@@ -31,8 +31,7 @@ Follow these steps carefully. The entire configuration is handled in the `config
 -   Python 3 installed on the machine where Tautulli runs.
 -   The `requests` library for Python. If you don't have it, install it:
 
-    ```bash
-    pip install requests
+                pip install requests
 
 ### 2. Generate Your AniList API Token (One-Time Setup)
 
@@ -51,8 +50,7 @@ This process uses the `get_token.py` script to automatically generate and save y
 **Step 2.2: Run the Token Generation Script**
 1.  Now, run the `get_token.py` script from your terminal:
 
-    ```bash
-    python get_token.py
+                python get_token.py
 
 2.  The script will guide you. It will ask you to open a URL in your browser to authorize the app.
 3.  After authorizing, AniList will give you a long code (PIN).
